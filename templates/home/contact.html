@@ -1,5 +1,37 @@
-{% extends "home/common.html" %}
+{% extends 'home/common.html' %}
 
-{% block title %} Contact{% endblock title %}
+{% block title %}
+  Contact
+{% endblock %}
 
-{% block body %} This is Contact!{% endblock body %}
+{% block body %}
+
+
+<div class="container my-4">
+
+    <h2 class="my-2">Contact Us!</h2>
+    <form action="/contact" method="post">{% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name....">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email....">
+          <small style="color: red;">We will never share your personal email id with any one.</small>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone....">
+        </div>
+        <div class="form-group">
+          <label for="decs">How May We Help You?</label>
+          <textarea rows="9" type="text" class="form-control" name='content' id="decs" placeholder="Enter Your Query...."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+      </form>
+
+
+</div>
+{% endblock %}
