@@ -1,10 +1,13 @@
 from django.shortcuts import render,HttpResponse
 from .models import Contact
 from django.contrib import messages
+from blog.models import Post 
 # Create your views here.
 
 def home(request):
-    return render(request , 'home/home.html')
+    allPosts= Post.objects.all()
+    context={'allPosts': allPosts}
+    return render(request , 'home/home.html', context)
 
 
 def about(request):
@@ -26,3 +29,11 @@ def contact(request):
             contact.save()
             messages.success(request, "Thankyou for contacting with us our team mate will reach you with in 24hr.")
     return render(request, "home/contact.html")
+
+
+def search(request):
+    query=request.GET['query']
+    allPosts= Post.objects.filter(title__icontains=query)
+    params={'allPosts': allPosts}
+    return render(request, 'home/search.html', params)
+    

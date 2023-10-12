@@ -1,5 +1,16 @@
 Here first 
 we create apps for the project iCoder
-1-Blog
+1-Blog:-
+    1-blog home page is displayed and fetch the data from the database-81
 2-Home:- Home is collection of contact, about etc.
-    1-home->Contact-> i used django message for showing the alert as per our need first i import the djnago message in views  after that change one setting in Icoder that is import and override the message.video number-79
+    1-home->Contact-> i used django message for showing the alert as per our need first i import the djnago message in views  after that change one setting in Icoder that is import and override the message.video number-
+    2-home- home page created
+
+
+
+
+
+
+
+shubham
+1234
